@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>
+        {{ article.title }}
+    </title>
+</head>
+<body class="d-flex h-100 text-center text-bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <div class="container">
+            <header class="d-flex justify-content-center py-3">
+              <ul class="nav nav-pills">
+                <li class="nav-item"><a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a></li>
+                <li class="nav-item"><a href="/features" class="nav-link {% if request.path == '/features' %}active{% endif %}">Features</a></li>
+                <li class="nav-item"><a href="/prices" class="nav-link {% if request.path == '/prices' %}active{% endif %}">Pricing</a></li>
+                <li class="nav-item"><a href="/faq" class="nav-link {% if request.path == '/faq' %}active{% endif %}">FAQs</a></li>
+                <li class="nav-item"><a href="/about" class="nav-link {% if request.path == '/about' %}active{% endif %}">About</a></li>
+                <li class="nav-item"><a href="/create-article" class="nav-link {% if request.path == '/create-article' %}active{% endif %}">Create Article</a></li>
+                <li class="nav-item"><a href="/read-article" class="nav-link {% if request.path == '/read-article' %}active{% endif %}">Read Articles</a></li>
+              </ul>
+            </header>
+          </div>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <main class="px-3">
+        <h1>{{ article.title }}</h1>
+        <p class="lead">{{ article.text }}</p>
+        <p class="lead">Post date: {{ article.date.date() }}</p>
+        <p class="lead">
+            <a href="/read-article/{{ article.id }}/edit" class="btn btn-warning">Edit this Article</a>
+        </p>
+        <p class="lead">
+            <a href="/read-article/{{ article.id }}/delete" class="btn btn-danger">Delete this Article</a>
+        </p>
+        <p class="lead">
+          <a href="/read-article" class="btn btn-lg btn-light fw-bold border-white bg-white">Back to Articles</a>
+        </p>
+      </main>
+    </div>
+    
+      <footer class="mt-auto text-white-50">
+        <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+      </footer>
+    </div>
+</body>
