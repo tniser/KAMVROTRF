@@ -1,0 +1,104 @@
+{% extends 'contacts/base.html' %}
+{% load static %}
+
+{% block title %}
+    Little Taco Shop
+{% endblock %}
+
+{% block content %}
+        {% for category in categories %}
+        <h1>{{ pq }}</h1>
+            <table class="iksweb">
+                <tbody>
+                    <tr>
+                        <td>{{ category }}</td>
+                        <td>Количество</td>
+                        <td>Цена</td>
+                    </tr>
+                    {% for name in names %}
+                    {% if name.menu_category == category %}
+                        {% for price in prices %}
+                            {% if price.price_name == name %}
+                                <h1>{{ price.price_name }} - {{ price.price_quant }} - {{ price.price_price }}</h1>
+                            {% endif %}
+                        {% endfor %}
+                    <tr>
+                        <td rowspan="3">{{ name }}</td>
+                        <td></td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                    <!--
+                    {% for name in names %} 
+                    <tr>
+                        <th class="menu__item menu__cr" scope="row" rowspan="3">
+                            {{ name.menu_name }}
+                        </th>
+                        <td class="menu__item">1</td>
+                        <td class="menu__item">$1.50</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">2</td>
+                        <td class="menu__item">$2.50</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">3</td>
+                        <td class="menu__item">$3.25</td>
+                    </tr>
+                    {% endfor %}
+                    -->
+                </tbody>
+            </table>   
+<!--
+                <tbody>
+                    <tr>
+                        <th class="menu__item menu__cr" scope="row" rowspan="3">
+                            Crunchy
+                        </th>
+                        <td class="menu__item">1</td>
+                        <td class="menu__item">$1.50</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">2</td>
+                        <td class="menu__item">$2.50</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">3</td>
+                        <td class="menu__item">$3.25</td>
+                    </tr>
+                    <tr>
+                        <th class="menu__item menu__sf" scope="row" rowspan="3">
+                            Soft
+                        </th>
+                        <td class="menu__item">1</td>
+                        <td class="menu__item">$2.00</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">2</td>
+                        <td class="menu__item">$3.50</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">3</td>
+                        <td class="menu__item">$4.50</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="menu__item menu__cs" colspan="3">
+                            Chips &amp; Salsa $2
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+-->    
+        {% endfor %}
+{% endblock %}

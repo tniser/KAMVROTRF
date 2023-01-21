@@ -1,0 +1,29 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Dave Gray">
+    <meta name="description" content="The official website for The Little Taco Shop">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'contacts/img/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'contacts/css/style.css' %}">
+    <script src="js/main.js" defer></script>
+
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+
+<body>
+    
+{% block content %} 
+
+
+
+{% endblock %}
+
+</body>
+</html>
