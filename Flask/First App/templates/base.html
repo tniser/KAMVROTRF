@@ -21,6 +21,8 @@
             <li class="nav-item"><a href="/prices" class="nav-link {% if request.path == '/prices' %}active{% endif %}">Pricing</a></li>
             <li class="nav-item"><a href="/faq" class="nav-link {% if request.path == '/faq' %}active{% endif %}">FAQs</a></li>
             <li class="nav-item"><a href="/about" class="nav-link {% if request.path == '/about' %}active{% endif %}">About</a></li>
+            <li class="nav-item"><a href="/create-article" class="nav-link {% if request.path == '/create-article' %}active{% endif %}">Create Article</a></li>
+            <li class="nav-item"><a href="/read-article" class="nav-link {% if request.path == '/read-article' %}active{% endif %}">Read Articles</a></li>
           </ul>
         </header>
       </div>
@@ -39,6 +41,13 @@
         </div>
       </div>
       <div class="container">
+        <div class="px-4 py-5 my-5">
+          {% block create %} 
+      
+          {% endblock %}
+        </div>
+      </div>
+      <div class="container">
         <footer class="py-3 my-4">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
@@ -46,6 +55,8 @@
             <li class="nav-item"><a href="/prices" class="nav-link px-2 text-muted">Pricing</a></li>
             <li class="nav-item"><a href="/faq" class="nav-link px-2 text-muted">FAQs</a></li>
             <li class="nav-item"><a href="/about" class="nav-link px-2 text-muted">About</a></li>
+            <li class="nav-item"><a href="/create-article" class="nav-link px-2 text-muted">Create Article</a></li>
+            <li class="nav-item"><a href="/read-article" class="nav-link px-2 text-muted">Read Articles</a></li>
           </ul>
           <p class="text-center text-muted">© 2023 КАМВРОТ.РФ</p>
         </footer>
